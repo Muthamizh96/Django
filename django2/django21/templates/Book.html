@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book The Bikes and Cars.</title>
+    <style>
+    {% load static %}
+        *
+        {
+            margin: 0px;
+            padding: 0px;
+
+        }
+        #head
+        {
+            color:rgb(254, 255, 253);
+            text-shadow: 5px 0px 3px rgb(255, 0, 0);
+            font-size: 15px;
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+            background-color:rgb(32, 178, 171);
+        }
+        #content
+        {
+            background-image: url(/static/Book/bike4.jpg);
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+        #pulsar
+        {
+            width:350px;
+            height: 400px;
+            background-image: url(/static/Book/bbike1.jpg);
+            background-repeat: no-repeat;
+            background-size:contain;
+            border-radius: 10px;
+            margin-left: 70px;
+        }
+        #hondashine
+        {
+            width:350px;
+            height: 400px;
+            background-image: url(/static/Book/bbike3.jpg);
+            background-repeat: no-repeat;
+            background-size:contain;
+            border-radius: 10px;
+            margin-left: 70px;
+
+        }
+        #scooty
+        {
+            width:350px;
+            height: 400px;
+            background-image: url(/static/Book/bbike9.jpg);
+            background-repeat: no-repeat;
+            background-size:contain;
+            border-radius: 10px;
+            margin-left: 70px;
+        }
+        #unicorn
+        {
+            width:350px;
+            height: 400px;
+            background-image: url(/static/Book/bbike6.jpg);
+            background-repeat: no-repeat;
+            background-size:contain;
+            border-radius: 10px;
+            margin-left: 70px;
+        }
+        #scooty1
+        {
+            width:350px;
+            height: 400px;
+            background-image: url(/static/Book/bbike8.jpg);
+            background-repeat: no-repeat;
+            background-size:contain;
+            border-radius: 10px;
+            margin-left: 70px;
+        }
+        #bullet
+        {
+            width:350px;
+            height: 400px;
+            background-image: url(/static/Book/bbike4.jpg);
+            background-repeat: no-repeat;
+            background-size:contain;
+            border-radius: 10px;
+            margin-left: 70px;
+        }
+        #pulsar11
+        {
+            width:350px;
+            height: 400px;
+            background-image: url(/static/Book/bbike11.jpg);
+            background-repeat: no-repeat;
+            background-size:contain;
+            border-radius: 13px;
+            margin-left: 70px;
+        }
+        #pulsar1
+        {
+            width:350px;
+            height: 400px;
+            background-image: url(/static/Book/bbike5.jpg);
+            background-repeat: no-repeat;
+            background-size:contain;
+            border-radius: 13px;
+            margin-left: 70px;
+        }
+        #yamaha
+        {
+            width:350px;
+            height: 400px;
+            background-image: url(/static/Book/bbike7.jpg);
+            background-repeat: no-repeat;
+            background-size:contain;
+            border-radius: 13px;
+            margin-left: 70px;
+        }
+        .but
+        {
+            font-size: 30px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+            width: 350px;
+            margin-top: 139px;
+            color: rgb(5, 5, 5);
+            opacity: 0.5;
+            font-weight:bold;
+            font-style: italic;
+        }
+        .but:hover
+        {
+            opacity: 1;
+            background-color: black;
+            color: white;
+        }
+        .bikes
+        {
+            display: flex;
+            height:200px;
+        }
+        .bikes1
+        {
+            display: flex;
+            margin-top: 50px;
+            height:200px;
+        }
+        .bikes2
+        {
+            display: flex;
+            margin-top: 50px;
+            height:225px;
+        }
+        .bikes3
+        {
+            display: flex;
+            margin-top: 50px;
+            height:225px;
+        }
+        #topic
+        {
+            font-size: 50px;
+            text-align: center;
+            color:red;
+            text-shadow: 1px 2px 2px white;
+            margin: 0px;
+        }
+        #foot
+        {
+            background-color:crimson;
+            color: thistle;
+            font-size:20px;
+            height: 200px;
+            display: flex;
+        }
+        #foot1
+        {
+            margin-top: 170px;
+            text-align: center;
+            margin-left: 200px;
+            font-size: 25px;
+            font-style: italic;
+        }
+        ul,li,a
+        {
+            display: block;
+            text-decoration: none;
+            padding: 2px;
+            padding-left: 25px;
+            color: white;
+        }
+        a:hover
+        {
+            color:darkblue;
+            text-decoration: overline;
+        }
+        .form2
+        {
+            display: none;
+            position:absolute;
+            transform: translate(-50%, 5%);
+            border: 0px solid #999999;
+            z-index: 9;
+            background-image: url(/static/book/bike7.jpg);
+            background-repeat:no-repeat;
+            background-size: cover;
+            width: 400px;
+            height:563px;
+            border-radius: 10px;
+            left: 50%;
+            top: 100px;
+
+        }
+        label
+        {
+            display: block;
+            padding: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+        label::after
+        {
+            content: "*";
+            color:red;
+        }
+        input,select,option
+        {
+           color:rgb(2, 2, 2);
+           width: 250px;
+           height: 22px;
+           border-radius: 5px;
+           font-weight: bold;
+           font-size: 18px;
+        }
+        #formhead
+        {
+            padding-top: 10px;
+            color: darkorange;
+        }
+        #booknow
+        {
+            background-color: gold;
+            font-size: 30px;
+            color: blue;
+            width: 400px;
+            height: 50px;
+            border-radius: 10px;
+            border-style: none;
+            font-weight: bold;
+        }
+        #booknow:hover
+        {
+            background-color: rgb(0, 255, 242);
+            color:black;
+            font-weight: bold;
+        }
+        #mandate
+        {
+            color:red;
+        }
+        #no
+        {
+            text-orientation:sideways;
+            writing-mode: vertical-rl;
+            float: left;
+            margin-top: 100px;
+            font-size: 20px;
+
+        }
+        </style>
+    <script>
+        function AT3301()
+        {
+            var b=document.getElementById("form1");
+            b.style.display="block";
+            var b02=document.getElementById("fromb");
+            var b03=document.getElementById("bike3301");
+            b02.value=b03.innerText;
+        }
+        function AT3302()
+        {
+            var b=document.getElementById("form1");
+            b.style.display="block";
+            var b02=document.getElementById("fromb");
+            var b03=document.getElementById("bike3302");
+            b02.value=b03.innerText;
+        }
+        function AT3303()
+        {
+            var b=document.getElementById("form1");
+            b.style.display="block";
+            var b02=document.getElementById("fromb");
+            var b03=document.getElementById("bike3303");
+            b02.value=b03.innerText;
+        }function AT3304()
+        {
+            var b=document.getElementById("form1");
+            b.style.display="block";
+            var b02=document.getElementById("fromb");
+            var b03=document.getElementById("bike3304");
+            b02.value=b03.innerText;
+        }
+        function AT3305()
+        {
+            var b=document.getElementById("form1");
+            b.style.display="block";
+            var b02=document.getElementById("fromb");
+            var b03=document.getElementById("bike3305");
+            b02.value=b03.innerText;
+        }
+        function AT3306()
+        {
+            var b=document.getElementById("form1");
+            b.style.display="block";
+            var b02=document.getElementById("fromb");
+            var b03=document.getElementById("bike3306");
+            b02.value=b03.innerText;
+        }
+        function AT3307()
+        {
+            var b=document.getElementById("form1");
+            b.style.display="block";
+            var b02=document.getElementById("fromb");
+            var b03=document.getElementById("bike3307");
+            b02.value=b03.innerText;
+        }
+        function AT3308()
+        {
+            var b=document.getElementById("form1");
+            b.style.display="block";
+            var b02=document.getElementById("fromb");
+            var b03=document.getElementById("bike3308");
+            b02.value=b03.innerText;
+        }
+        function AT3309()
+        {
+            var b=document.getElementById("form1");
+            b.style.display="block";
+            var b02=document.getElementById("fromb");
+            var b03=document.getElementById("bike3309");
+            b02.value=b03.innerText;
+        }
+
+    </script>
+</head>
+<body>
+    <div id="book1" class="book2">
+        <center><form action="#" method="post" id="form1" class="form2" name="bookform">{% csrf_token %}
+            <h2 id="formhead">Booking...!</h2>
+            <label for="fromb">Your&nbsp;Bike&nbsp;Number&nbsp;Is</label>
+            <input type="text" id="fromb" name="ubike" placeholder="Bike No">
+
+            <label for="name">Rider&nbsp;Name</label>
+            <input type="text" id="name" name="uname" placeholder="Good Name Please" required>
+
+            <label for="mobile">Mobile&nbsp;Number</label>
+            <input type="text" id="mobile" name="unumber" placeholder="Mobile No" maxlength="10" required>
+
+            <label for="email">Email&nbsp;Id</label>
+            <input type="text" id="email" name="umail" placeholder="Your Email_Id Pls" required>
+
+            <label for="current">Current&nbsp;City</label>
+            <input type="text" id="current" name="ucity" placeholder="Enter your City" required>
+
+            <label for="profession">Profession</label>
+            <input type="text" id="profession" name="uprofession" placeholder="Enter your Profession" required>
+
+            <label for="licence">Driving&nbsp;Licence&nbsp;No</label>
+            <input type="text" id="licence" name="ulicence" placeholder="Licence No" required>
+
+            <label for="country">Choose&nbsp;Your&nbsp;Country</label>
+            <select name="ucountry" id="country" required>Choose&nbsp;Country
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="canada">CANADA</option>
+            <option value="uae">UAE</option></select>
+            <h3 id="mandate">*&nbsp;All&nbsp;Fields&nbsp;are&nbsp;Mandatory...!</h3>
+            <input type="submit" id="booknow"></input>
+        </form></center>
+    </div>
+<div id="head" class="head1"><h1>KS&nbsp;Bikes&nbsp;and&nbsp;cars&nbsp;Rental&nbsp;Services.<br>Chennai&nbsp;And&nbsp;Banglore.</h1></div>
+<div id="content">
+    <h2 id="topic">Bikes</h2><br>
+    <div id="bike" class="bikes">
+        <div id="pulsar">
+            <h3 id="bike3301">TN24 AT 3301</h3>
+            <button id="bike01" class="but" onclick="AT3301()">BOOK</button>
+        </div>
+        <div id="hondashine">
+            <h3 id="bike3302">TN24 AT 3302</h3>
+            <button id="bike02" class="but" onclick="AT3302()">BOOK</button>
+        </div>
+        <div id="scooty">
+            <h3 id="bike3303">TN24 AT 3303</h3>
+            <button id="bike03" class="but" onclick="AT3303()">BOOK</button>
+        </div>
+    </div>
+    <div id="bike1" class="bikes1">
+        <div id="unicorn">
+            <h3 id="bike3304">TN24 AT 3304</h3>
+            <button id="bike04" class="but" onclick="AT3304()">BOOK</button>
+        </div>
+        <div id="scooty1">
+            <h3 id="bike3305">TN24 AT 3305</h3>
+            <button id="bike05" class="but" onclick="AT3305()">BOOK</button>
+        </div>
+        <div id="bullet">
+            <h3 id="bike3306">TN24 AT 3306</h3>
+            <button id="bike06" class="but" onclick="AT3306()">BOOK</button>
+        </div>
+    </div>
+    <div id="bike3" class="bikes3">
+        <div id="pulsar11">
+            <h3 id="bike3307">TN24 AT 3307</h3>
+            <button id="bike07" class="but" onclick="AT3307()">BOOK</button>
+        </div>
+        <div id="pulsar1">
+            <h3 id="bike3308">TN24 AT 3308</h3>
+            <button id="bike08" class="but" onclick="AT3308()">BOOK</button>
+        </div>
+        <div id="yamaha">
+            <h3 id="bike3309">TN24 AT 3309</h3>
+            <button id="bike09" class="but" onclick="AT3309()">BOOK</button>
+        </div>
+    </div>
+</div>
+    <div id="foot" class="footer">
+        <ul>
+            <li><a href="#">Terms&nbsp;And&nbsp;Conditions.</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">About&nbsp;Us</a></li>
+            <li><a href="#">ContactUs</a></li>
+            <li><a href="#">Copyrights</a></li>
+            <li><a href="#">Reviews</a></li>
+        </ul>
+        <h4 id="foot1">Site&nbsp;Devoloped&nbsp;and&nbsp;Maintained&nbsp;By&nbsp;Muthamizh&nbsp;S</h4>
+    </div>
+</body>
+</html>

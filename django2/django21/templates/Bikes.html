@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KS Rental bikes....!</title>
+    <style>
+    {% load static %}
+        body
+        {
+            padding: 0px;
+            margin: 0px;
+            background-image:url("/static/bikes/bike6.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .head1
+        {
+            padding: 2px;
+            height: 50px;
+        }
+        #pagehead
+        {
+            font-size: 25px;
+            color:rgb(0, 255, 34);
+            padding-left: 50px;
+        }
+        #e1
+        {
+            background-color:white;
+            margin-left: 400px;
+            margin-top: 90px;
+            width: 500px;
+            height: 40px;
+            border-radius: 10px;
+        }
+        .e11
+        {
+            text-align: center;
+            margin: 25px;
+            font-size: 25px;
+            color:#FF4500;
+        }
+        label
+        {
+            display:inline-block;
+            font-size: 26px;
+            color:rgb(255, 255, 255);
+            text-shadow: 3px 0px 15px rgb(235, 235, 235);
+            font-weight: bold;
+        }
+        label:after
+        {
+            content:"*";
+            color: red;
+        }
+        #e2
+        {
+            padding:5px;
+            margin-left: 200px;
+            margin-top: 50px;
+            width: 1000px;
+            height: 300px;
+        }
+        input
+        {
+            display: inline-block;
+            font-size: 15px;
+            opacity: 1;
+            height: 30px;
+            width: 250px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        input:hover
+        {
+            opacity: 1;
+            color: Black;
+            box-shadow:0px 5px 20px blue;
+        }
+        #age
+        {
+            width: 50px;
+        }
+        #lno
+        {
+            width: 350px;
+        }
+        #button
+        {
+            margin-top: 0px;
+            font-size: 25px;
+            border-radius: 8px;
+            width: 110px;
+            height: 40px;
+            opacity: 1;
+            margin-left: 350px;
+            border-style: none;
+            background-color:rgb(0, 255, 34);
+        }
+        #button:hover
+        {
+            background-color: #ff0000;
+        }
+        #Login1
+        {
+            font-size: 25px;
+            border-radius: 8px;
+            width: 140px;
+            height: 40px;
+            border-style: none;
+            background-color:rgb(81, 255, 0);
+            visibility: hidden;
+        }
+        #Login1:hover
+        {
+            background-color: #ff0000;
+        }
+        #name1,#age1,#lic
+        {
+            margin-left: 15px;
+        }
+    </style>
+    <script>
+        function validation()
+        {
+            var fn=document.eligible.fname11.value;
+            var ln=document.eligible.lname11.value;
+            var age1=document.eligible.age11.value;
+            var mobile=document.eligible.mob11.value;
+            var licence=document.eligible.lic11.value;
+            if(fn=="", ln=="",age1=="",mobile=="" , licence=="")
+            {
+                alert("please fill it all");
+            }
+            else if (age1 <= 18)
+            {
+                alert("you are not eligible");
+            }
+            else
+            {
+                let mobile1=prompt("Re-enter your Mobile Number");
+                if (mobile1!=mobile)
+                {
+                    alert("Mobiler Number Mismatch");
+                }
+                else
+                {
+                alert("You are Eligible you can get bike for Rent from us.");
+                var x=document.getElementById("button");
+                x.style.visibility="hidden";
+                var y=document.getElementById("Login1");
+                y.style.visibility="visible";
+                }
+            }
+        }
+        function nextpage()
+        {
+            window.open("http://127.0.0.1:8000/bike/book/","_self");
+            var z=document.getElementById("Login1");
+            z.disabled=true;
+
+        }
+    </script>
+</head>
+<body>
+    <div id="head" class="head1">
+        <h1 id="pagehead" class="pagehead1">KS&nbsp;Rental&nbsp;Bikes&nbsp;and&nbsp;Cars.<br>
+            We&nbsp;provide&nbsp;Bikes&nbsp;and&nbsp;Cars&nbsp;Here.</h1><hr>
+    </div>
+
+    <div id="e1" class="e11"><h3>Enter&nbsp;the&nbsp;details&nbsp;to&nbsp;check&nbsp;the&nbsp;Eligibility</h3></div>
+    <div id="e2" class="e22">
+        <form action='  ' mathod=' ' name="eligible" id="eligible1">
+
+        <label for="fname" id="name" name="fname1">FirstName:</label>
+        <input type="text" name="fname11" id="fname" placeholder="Muthamizh" required>
+
+        <label for="lname" id="name1" name="lname1">LastName:</label>
+        <input type="text" name="lname11" id="lname" placeholder="S" required>
+
+        <label for="age" id="age1" name="age">Age:</label>
+        <input type="text" name="age11" id="age" maxlength="2" placeholder="00" required><br>
+        <br>
+        <br>
+        <br>
+        <label for="mobile" id="mob" name="mob1">Mobile&nbsp;No:</label>
+        <input type="text" name="mob11" id="mobile" maxlength="10"placeholder="9345501339" required>
+
+        <label for="lno" id="lic" name="lic1">Driving&nbsp;Licence:</label>
+        <input type="text" name="lic11" id="lno" placeholder="TN-248984513145" required>
+        <br>
+        <br>
+        <br>
+        <input type="button" id="button" value="Check" class="valid" onclick="validation()">
+        <input type="button" id="Login1" value="Book Now"  class="valid" onclick="nextpage()">
+        </form>
+    </div>
+</body>
+</html>
